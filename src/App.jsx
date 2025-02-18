@@ -15,8 +15,7 @@ function App() {
   const handlevercel = async () => {
     const res = await axios.get('https://developers-project.vercel.app/api/test')
     console.log(res)
-    console.log(res.message)
-    setData(res.message || '')
+    setData(res.data.message || '')
   }
 
   return (
