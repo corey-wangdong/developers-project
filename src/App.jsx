@@ -12,9 +12,16 @@ function App() {
     setData(JSON.stringify(res.data))
   }
 
+  const handlevercel = async () => {
+    const res = await axios.get('https://developers-project.vercel.app/api/test')
+    console.log(res)
+    console.log(res.message)
+    setData(res.message || '')
+  }
+
   return (
     <>
-      <button onClick={handleData}> 测试vercel</button>
+      <button onClick={handlevercel}> 测试vercel</button>
       <button onClick={handleData}> 点击获取数据</button>
       <p>{data}</p>
     </>
