@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import './App.css'
+import { log } from 'console'
 
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
   }
 
   const handleBlur = (data) => {
-    setFrom(data)
+    console.log('data---', data.target.value)
+    setFrom(data.target.value)
   }
 
   return (
